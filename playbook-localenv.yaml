@@ -1,0 +1,8 @@
+---
+ - name: Name of the tasks
+   hosts: redhat
+   vars:
+     local_shell:  "{{ lookup('env','PATH') }}"
+   tasks:
+     - debug:
+        msg: "{{ local_shell }}"

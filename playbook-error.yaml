@@ -1,0 +1,8 @@
+---
+ - name: ansible error handling
+   hosts: redhat,ubuntu
+   tasks:
+     - name: Files with errors
+       command: touch /tmp/temp-123.txt
+     - name: Files without errors
+       command: touch /tmp/tasks/errors-123.txt

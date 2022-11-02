@@ -1,0 +1,21 @@
+--- 
+ - name: installation of web server
+   hosts: redhat
+   tasks:
+     - name: This is installation of the package
+       yum:
+         name: nginx
+         state: present
+       register: yum_output
+       ignore_errors: true
+     
+     - name: Show me the value store in register variables
+       debug:
+         msg: "{{ yum_output }}"
+         
+     - name: conditional statment
+       debug:
+         msg: "This Package is failed"
+       when: yum_output.failed == true
+
+    
