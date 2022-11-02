@@ -1,0 +1,37 @@
+# This is the playbook to implement the internal webservice
+---
+ - name: Enabling the internal web-service
+   hosts: redhat
+   become: yes
+   tasks:
+     - name: Include the vars inside the tasks
+       include_vars: vars.yaml
+     - name: Install {{ myweb }} and {{ myfire }}
+       yum:
+         name:
+           - "{{ myweb }}"
+           - "{{ myfire }}"
+         state: present
+     - name: Enable the and run {{ myfire }}
+       service:
+         name: "{{ myfire }}"
+         enabled: yes
+         state: started
+     - name: The {{ myfire }} permitted {{ myweb }} service
+       firewalld:
+         permanent: yes
+         state: enabled
+         port: 80/tcp
+         immediate: yes
+     - name: httpd enabled and running
+       service:
+         name: "{{ myweb }}"
+         enabled: yes
+         state: started
+     - name: test html page
+       copy:
+         content: "Welcome to the Ansible batch No-2!\n"
+         dest: /var/www/html/index.html
+     - name: Task is completed
+       debug:
+         msg: server {{ myweb1 }} is running fine

@@ -1,0 +1,7 @@
+---
+ - name: This is magical variables
+   hosts: redhat
+   tasks:
+     - name: show inventory hostname
+       debug:
+         msg: "{{ inventory_hostname }}  {{ group_names }}"

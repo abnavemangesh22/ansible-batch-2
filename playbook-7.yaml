@@ -1,0 +1,7 @@
+---
+ - name: variable concepts
+   hosts: redhat
+   tasks:
+     - name: Printing the variable information
+       debug:
+         msg: Hello {{ ansible_become_user }}
