@@ -1,0 +1,25 @@
+---
+ - name: Confiuration of the user
+   hosts: redhat
+   tasks:
+     - name: Creation of app user
+       user: name=likhith state=present uid=5001 group=root
+     - name: Line folding method-1
+       user: |
+         name=likhith1
+         state=present
+         uid=5002
+         group=root
+     - name: Line folding method-2
+       user: >
+         name=likhith2
+         state=present
+         uid=5003
+         group=root
+     - name: Line folding method-3
+       user:
+         name: likhit3
+         state: present
+         uid: 5004
+         group: root
+

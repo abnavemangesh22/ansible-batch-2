@@ -1,0 +1,9 @@
+users:
+  john:
+    firstname: John
+    lastname: Brandon
+    designation: SysAdmin
+  bmarry:
+    firstname: Marry
+    lastname: Brown
+    designation: Developer

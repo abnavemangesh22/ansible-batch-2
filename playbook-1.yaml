@@ -1,0 +1,8 @@
+---
+- name: This is my first Play
+  hosts: redhat
+  tasks:
+    - name: I am creating a dummy file.
+      command: touch /tmp/mangesh_dummy.txt
+    - name: I am updating the dummyfile.
+      shell: ls -l /etc > /tmp/mangesh_dummy.txt 

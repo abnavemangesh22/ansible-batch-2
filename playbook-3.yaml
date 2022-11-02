@@ -1,0 +1,9 @@
+---
+ - name: Installation of web server
+   hosts: redhat
+   tasks:
+     - name: Installation of httpd server
+       yum: name=httpd state=present
+     - name: Start the httpd service
+       service: name=httpd enabled=yes state=started
+ 

@@ -1,0 +1,16 @@
+---
+ - name: Installation of web server on Amazon Linux
+   hosts: redhat
+   tasks:
+     - name: Installation of httpd server
+       yum: name=httpd state=present
+     - name: Start the httpd service
+       service: name=httpd enabled=yes state=started
+
+ - name: Installation of webserver on ubuntu
+   hosts: ubuntu
+   tasks:
+     - name: Installation of apache2 server
+       apt: name=apache2 state=present
+     - name: start the apache2 service
+       service: name=apache2 enabled=yes state=started  

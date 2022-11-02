@@ -1,0 +1,6 @@
+---
+ - name: This is my first playbook
+   hosts: redhat
+   tasks:
+    - name: to just create the sample config file
+      command: touch /tmp/myconffile 
