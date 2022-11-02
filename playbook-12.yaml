@@ -1,0 +1,8 @@
+---
+ - name: this is just a demo for variables
+   hosts: redhat,ubuntu
+   tasks:
+     - name: This is an echo
+       debug:
+         msg: "{{ myworld }}"
+

@@ -1,0 +1,9 @@
+---
+ - name: I am using the variables from the playbook
+   hosts: redhat
+   tasks:
+     - name: Declare variable from this task
+       include_vars: vars1.yaml
+     - name: Printing the message
+       debug:
+         msg: this is my {{ myweb }}
