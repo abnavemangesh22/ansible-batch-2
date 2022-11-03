@@ -1,0 +1,10 @@
+---
+ - name: capture the output of the command
+   hosts: redhat
+   tasks:
+     - name: collection of ip address of the machine
+       shell: "hostname -i"
+       register: ip_addr
+     - name: This is my IP
+       debug:
+         msg: "{{ ip_addr }}"

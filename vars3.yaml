@@ -1,0 +1,8 @@
+users:
+  john:
+    firstname: john
+    lastname: brandon
+    designation: system
+  marry:
+    firstname: marry
+    lastname: brown

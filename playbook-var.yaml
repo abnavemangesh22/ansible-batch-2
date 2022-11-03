@@ -1,8 +1,9 @@
 ---
  - name: This is my first play
-   hosts: all
-   gather_facts: false
+   hosts: redhat,ubuntu
+   vars_files:
+     - vars3.yaml
    tasks:
     - name: Print message
       debug:
-        msg: "{{ groups }}"
+        msg: "{{ users['john']['lastname'] }}"

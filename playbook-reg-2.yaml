@@ -1,0 +1,17 @@
+---
+ - name: To install the package
+   hosts: redhat
+   tasks:
+     - name: Installation of nginx
+       yum:
+         name: nginx
+         state: latest
+       register: yumoutput
+       ignore_errors: yes
+     - name: Printing the error
+       debug:
+         msg: "{{ yumoutput }}"
+     - name: Print the failed message
+       debug:
+         msg: "The package nginx is failed"
+       when: yumoutput.failed == true

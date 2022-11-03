@@ -1,0 +1,10 @@
+---
+- name: Get the uptime of the machines
+  hosts: ubuntu
+  tasks:
+    - name: Executing and registering command output
+      shell: "uptime"
+      register: uptime_result
+    - name: display the uptime of the servers
+      debug:
+        msg: "{{uptime_result.stdout_lines}}"

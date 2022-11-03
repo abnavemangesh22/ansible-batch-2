@@ -1,0 +1,6 @@
+---
+- name: Install Git
+  hosts: all
+  roles:
+    - role: geerlingguy.git
+
